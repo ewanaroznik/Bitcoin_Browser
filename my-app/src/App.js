@@ -4,14 +4,29 @@ import { Search } from './Components/Search.jsx';
 import { Results } from './Components/Results.jsx';
 
 class App extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            hash: ""
+        };
+    }
+
+    changeHash = (hash) => {
+        this.setState({
+            hash: hash
+        })
+    };
+
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Bitcoin Browser</h1>
         </header>
-        <Search />
-          <Results hash="f854aebae95150b379cc1187d848d58225f3c4157fe992bcd166f58bd5063449"/>
+        <Search sendHash = {this.changeHash}/>
+          <Results hash={this.state.hash}/>
       </div>
     );
   }
