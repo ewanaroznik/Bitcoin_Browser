@@ -25,8 +25,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Bitcoin Browser</h1>
         </header>
-        <Search sendHash = {this.changeHash}/>
-          <Results hash={this.state.hash}/>
+        <section className="browser-container">
+            <Search sendHash = {this.changeHash}/>
+            <Results hash={this.state.hash}/>
+        </section>
       </div>
     );
   }

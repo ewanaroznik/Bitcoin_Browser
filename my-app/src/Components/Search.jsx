@@ -9,7 +9,6 @@ export class Search extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Your hash is ' + this.props.hash);
     };
 
     render() {
